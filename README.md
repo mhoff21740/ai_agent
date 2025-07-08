@@ -1,3 +1,7 @@
+DISCLAIMER:
+   TThis project does not have all the security and safety features that a production AI agent would have. It is for learning purposes only!!
+
+
 AI-Powered CLI Agent
 
     A command-line tool that leverages a pre-trained language model to iteratively diagnose and fix Python code, built with a functional-programming approach.
