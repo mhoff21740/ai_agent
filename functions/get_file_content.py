@@ -1,5 +1,6 @@
 import os
 from functions.config import MAX_CHARS
+from google.generativeai import types
 
 def get_file_content(working_directory, file_path):
     try:
@@ -30,3 +31,17 @@ def get_file_content(working_directory, file_path):
 
 
 
+schema_get_file_content = types.FunctionDeclaration(
+    name="get_file_content",
+    description="Reads content within a file that is constrained to the working directory.",
+    parameters={
+        "type": "object",
+        "properties": {
+            "directory": {
+                "type": "string",
+                "description": "The directory to list files from, relative to the working directory. If not provided, lists files in the working directory itself."
+            }
+        },
+        "required": [] 
+    }
+)

@@ -1,4 +1,5 @@
 import os
+from google.generativeai import types
 
 def write_file(working_directory, file_path, content):
     try:
@@ -17,7 +18,25 @@ def write_file(working_directory, file_path, content):
 
 
         
-    
+schema_write_file = types.FunctionDeclaration(
+    name="write_file",
+    description="Writes to a file that is constrained to the working directory.",
+    parameters={
+        "type": "object",
+        "properties": {
+            "file_path": {
+                "type": "string",
+                "description": "Path to the file to write to, relative to the working directory.",
+            },
+            "content": {
+                "type": "string",
+                "description": "The text content to write to the file.",
+            },
+        },
+        "required": ["file_path", "content"]
+    }
+)
+
     
     
     
