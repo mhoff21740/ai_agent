@@ -1,0 +1,30 @@
+Lessons Learned
+
+This project served as a deep dive into tool-calling with the Gemini API, structured function delegation, and message-based conversation modeling—topics that bridge both functional programming and modern AI integration.
+
+1. Working with Real-World APIs Is Hard
+The Gemini SDK and associated documentation were frequently outdated, misleading, or incomplete. This led to a lot of time spent debugging import errors, tracing through ambiguous stack traces, and adapting examples that no longer matched the current SDK. It was frustrating—but it also gave me a taste of what real-world development looks like.
+
+2. Function Delegation and Call Resolution
+I learned how to set up a dynamic function map (FUNCTION_MAP) and create a central call_function handler that injects missing arguments and routes tasks correctly. This required understanding how function metadata is defined and invoked programmatically—a foundational piece of functional programming, even if it didn’t feel like it at the time.
+
+3. Tool-Based Interaction Loops
+I implemented an iterative content generation loop that re-sends model output, processes tool calls, and appends responses—mirroring how modern AI agents operate. While I didn’t fully grasp all of it at first, I now see how the loop, message list, and inference steps form the basis for multi-turn AI interactions.
+
+4. Failure Is Part of the Process
+The emotional side of development—feeling behind, doubting my progress, relying heavily on help—taught me that struggle is part of mastery. I now better understand that getting stuck isn’t a sign of incompetence, but a signal that I’m in the middle of learning something hard.
+
+Self-Reflection
+This project was overwhelming at times, and I won’t pretend I did most of it on my own. I leaned heavily on AI to guide me—sometimes to the point where I didn’t feel like I learned much. That’s disappointing. But it’s also honest. And in that honesty, I can see growth:
+
+I showed up repeatedly, even when I was lost.
+
+I debugged real stack traces, worked with Pydantic models, and dealt with missing modules and import hell.
+
+I read through error messages, tried to understand what went wrong, and kept going even when I was frustrated.
+
+I finished the project. And that’s worth something.
+
+What I missed in deeper functional programming practice, I gained in real-world exposure to systems-level thinking: message flows, API interaction, error handling, and tool orchestration. If I had to do it again, I’d build a smaller version first, then add complexity layer by layer. But I don’t regret doing it the hard way—I learned from that too.
+
+In short: I didn’t walk away from this a functional programming master, but I did walk away better prepared to build the next thing—with more patience, perspective, and grit than when I started.

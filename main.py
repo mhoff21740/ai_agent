@@ -198,8 +198,8 @@ def main():
                 contents=messages,
                 tools=[AVAILABLE_FUNCTIONS],
             )
-        except Exception as exc:
-            print(f"Fatal API error: {exc}")
+        except Exception as e:
+            print(f"Fatal API error: {e}")
             return
 
         # append model’s content to history
@@ -207,7 +207,7 @@ def main():
             messages.append({"role": "model",
                              "parts": cand.content.parts})
 
-        # if LLM produced plain text, we’re done
+       
         plain_text = None
         try:
             # Part-wise scan avoids ValueError when a function_call is present
@@ -217,7 +217,6 @@ def main():
             plain_text = " ".join(text_chunks).strip() if text_chunks else None
         except Exception:
             plain_text = None
-# --------------------------------------------------------------------
 
         if plain_text:
             print("\nModel response:\n" + plain_text)
